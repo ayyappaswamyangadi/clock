@@ -6,7 +6,8 @@
 
 body{
     background: linear-gradient(to right, darkblue, blue, skyblue);
-    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +17,8 @@ body{
 .clock{
     width: 300px;
     height: 300px;
-    background: #fff;
+    background: whitesmoke;
+    box-shadow: 0 0 10px 3px white;
     border-radius: 50%;
     border: 20px solid black;
     position: relative;
@@ -118,12 +120,12 @@ span{
     left: 50%;
     width: 10px;
     height: 50%;
-    border: 1px solid white;
-    border-radius: 10px 10px 0 0;
+    /* border: 1px solid white; */
+    /* border-radius: 10px 10px 0 0; */
     z-index: 10;
-    background-color: black;
+    /* background-color: black; */
     transform-origin: bottom;
-    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg));
+    /* transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg)); */
 }
 
 .clock::after{
@@ -143,21 +145,70 @@ span{
     padding: 10px;
 }
 
-.clock .hand.second{
+/* .clock .hand.second{
     width: 3px;
     height: 45%;
     background-color: violet;
+} */
+
+.second::after{
+    content: '';
+    width: 3px;
+    height: 150px;
+    /* border-radius: 2px; */
+    background-color: gold;
+    position: absolute;
+    left: calc(50% - 1px);
+    bottom: -35px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    /* transform: translate(-50%, -50%); */
 }
 
-.clock .hand.minute{
+/* .clock .hand.minute{
     width: 7px;
     height: 35%;
     background-color: rgb(36, 35, 35);
+} */
+
+.minute::before{
+    content: '';
+    width: 6px;
+    height: 120px;
+    bottom: -25px;
+    background-color: gold;
+    position: absolute;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
-.clock .hand.hour{
+/* .clock .hand.hour{
     width: 10px;
     height: 30%;
     background-color: black;
+} */
+
+.hour::after{
+    content: '';
+    background: gold;
+    position: absolute;
+    width: 9px;
+    height: 90px;
+    bottom: -15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    outline: none;
+    border: none;
 }
 
+.second{
+    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg));
+}
+
+.minute{
+    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg));
+}
+
+.hour{
+    transform: translateX(-50%) rotate(calc(var(--rotation)));
+}
