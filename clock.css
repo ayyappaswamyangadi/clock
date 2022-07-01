@@ -131,7 +131,7 @@ span{
 .clock::after{
     content: '';
     position: absolute;
-    background: black;
+    background: goldenrod;
     z-index: 11;
     width: 15px;
     height: 15px;
@@ -210,5 +210,5 @@ span{
 }
 
 .hour{
-    transform: translateX(-50%) rotate(calc(var(--rotation)));
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
 }
